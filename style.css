@@ -3,7 +3,8 @@ body {
     color: rgb(144, 69, 11);
     padding: 10px;
     font-family: arial;
-}
+        background-image: url("Images/image1935699383-4321-28c932ac62fd620010ea983a1d54d7ed@1x.jpg");
+      }
 #all-contents {
   max-width: 800px;
     margin: auto;
@@ -11,7 +12,7 @@ body {
 
 /* navigation menu */
 nav {
-    background: rgb(239, 170, 41);
+    background: rgb(239, 150, 41);
    margin: 0 auto;
    margin-bottom: 20px;
    border-radius: 10% / 50%;
@@ -21,12 +22,12 @@ nav {
 h1 {
     display: flex;
     align-items: center;
-    color: rgb(198, 128, 71);
+    color: rgb(115, 56, 7);
     flex: 1;
     margin: 0;
 }
 #nav-ul {
-    list-style-image: none;
+    list-style-image: ;
 }
 .nav-li {
     display: inline-block;
@@ -34,13 +35,15 @@ h1 {
 }
 a {
     text-decoration: none;
-    color: #fff;
+    color: #953712;
 }
 
 /* main container area beneath menu */
 main {
-    background: rgb(227, 212, 170);
+    background: rgb(245, 182, 130);
     display: flex;
+    border-radius: 30px;
+    box-shadow: 10px 10px 5px #000000;
     
 }
 .sidebar {
@@ -64,7 +67,7 @@ h2, h3 {
 }
          /* portfolio styles */
          .content h1 {
-            color: rgb(197, 128, 38);
+            color: rgb(135, 84, 18);
         }
 
         #portfolio {
@@ -75,7 +78,7 @@ h2, h3 {
         #portfolio li {
             background: #f0af69;
             padding: 10px;
-            border-radius: 30px;
+            border-radius: 30px ;
             margin-bottom: 10px;
         }
 
@@ -85,5 +88,5 @@ h2, h3 {
 
         #portfolio a {
             text-decoration: none;
-            color: #d47816;
+            color: #5b340a;
         }
