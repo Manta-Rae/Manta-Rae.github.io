@@ -18,11 +18,15 @@
 			top: 100px;
 			/* Change me! */
 			left: 0px;
+			
 		}
 
 		.board {
 			height: 100vh;
-		}
+			background-image: url("img/woodsAI.png");
+			background-size: contain;
+
+		
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
@@ -52,12 +56,14 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPostitionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPostitionY);
 			}
 
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
+				var newText = 
 				box.text(newText);
 			}
 
@@ -66,16 +72,23 @@
 			//////////////////////////////////////////////////////////////////
 
 			// TODO 2 - Variable declarations 
-
-
-
+			var positionX = 0;
+			var points = 0;
+			var speed = 10;
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
 			function update() {
-
+				if (positionX > boardWidth){
+					speed *= -1
+				}
+				if (positionX < 0){
+					speed *= -1
+				}
+				positionX = positionX + speed;
+				moveBoxTo(positionX);
 
 			};
 
@@ -85,7 +98,10 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-
+				positionX = 0;
+				points = points + 1;
+				changeBoxText(points)
+				speed = speed + 3;
 
 			};
 
