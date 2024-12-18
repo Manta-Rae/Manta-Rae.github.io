@@ -18,9 +18,66 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
-
-    
-
+    function createSawBlade(x, y){
+      var hitZoneSize = 25;
+      var damageFromObstacle = 10;
+      var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
+      sawBladeHitZone.x = x;
+      sawBladeHitZone.y = y;
+      game.addGameItem(sawBladeHitZone);
+      var obstacleImage = draw.bitmap("img/sawblade.png");
+      sawBladeHitZone.addChild(obstacleImage);
+      obstacleImage.y = -25;
+      obstacleImage.x = -25;  
+    }
+    createSawBlade(300, 200);
+    createSawBlade(400, 250);
+    createSawBlade(500, 300);
+   function createEnemy(x, y){
+    var enemy = game.createGameItem("enemy", 25);
+    var redSquare = draw.rect(50, 50, "red");
+    redSquare.x = -25;
+    redSquare.y = -25;
+    enemy.addChild(redSquare);
+    enemy.x = x;
+    enemy.y = y;
+    game.addGameItem(enemy);
+    enemy.velocityX = -10
+    enemy.rotationalVelocity = 25
+    enemy.onPlayerCollision = function () {
+    game.changeIntegrity(-10)
+    }
+    enemy.onPlayerCollision();
+    enemy.onProjectileCollision = function (){
+      game.increaseScore(100);
+      enemy.fadeOut();
+    }
+   };
+   createEnemy(400, groundY - 10);
+   createEnemy(800, groundY - 100);
+   createEnemy(1200, groundY - 50);
+   function createCoin(){ 
+    var enemy = game.createGameItem("enemy", 25);
+    var redSquare = draw.bitmap("img/download.jpeg");
+    redSquare.x = -25;
+    redSquare.y = -25;
+    enemy.addChild('enemy');
+    enemy.x = x;
+    enemy.y = y;
+    game.addGameItem('enemy');
+    enemy.velocityX = -10
+    enemy.rotationalVelocity = 25
+    enemy.onPlayerCollision = function () {
+    game.changeIntegrity(+10)
+    enemy.fadeOut();
+    }
+    enemy.onPlayerCollision();
+    enemy.onProjectileCollision = function (){
+      game.increaseScore(200);
+      enemy.fadeOut();
+    }
+   };
+   createCoin(40, 70);
     function startLevel() {
       // TODO 13 goes below here
 
